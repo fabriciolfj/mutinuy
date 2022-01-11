@@ -1,56 +1,29 @@
-# reactive Project
+# Mutiny
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+- Esse framework vem para concorrer com reactor e rxjava.
+- Ele possui 2 operadores importantes, que são:
+  - Uni -> emite um unico evento
+  - Mult- -> emite vários eventos 
+- Existem varios operadores para ambos e muitos comuns entre eles
+- Podemos trabalhar com varios tipos de eventos, como:
+  - item
+  - falha
+  - cancelamento
+  - requisição
+  - completo
+- Existem grupos de operadores para lidar com cada etapa dita acima, alem de métodos espiões que não transformam o evento, apenas notifica você de algum
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+## Upstream vs downstream
+- Em programação reative sem nos deparamos com esses termos upstream e downstream, abaixo uma definição rapida de ambos:
+  - upstream: dentro de uma pipeline reativa, seria a etapa onde há menos valor agregado ou logo no inicio (não possiu dependência de outro objeto ou componente).
+  - downstream: dentro de uma pipeline reativa, seria o final onde há mais valor agregado ao objecto ou componente (possui depenência de outro objeto ou componente). 
 
-## Running the application in dev mode
+- Exemplificando em uma cadeia reativa:
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
 ```
+Multi.createFrom()
+.items(1,2,3,4) //upstream
+.subscribe() //downstream
+.with(item -> System.out.println(item));
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
-
-## Packaging and running the application
-
-The application can be packaged using:
-```shell script
-./mvnw package
 ```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/reactive-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
