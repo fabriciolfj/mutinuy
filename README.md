@@ -11,9 +11,19 @@
   - cancelamento
   - requisição
   - completo
-
+- Existem grupos de operadores para lidar com cada etapa dita acima, alem de métodos espiões que não transformam o evento, apenas notifica você de algum
 
 ## Upstream vs downstream
 - Em programação reative sem nos deparamos com esses termos upstream e downstream, abaixo uma definição rapida de ambos:
   - upstream: dentro de uma pipeline reativa, seria a etapa onde há menos valor agregado ou logo no inicio (não possiu dependência de outro objeto ou componente).
   - downstream: dentro de uma pipeline reativa, seria o final onde há mais valor agregado ao objecto ou componente (possui depenência de outro objeto ou componente). 
+
+- Exemplificando em uma cadeia reativa:
+
+```
+Multi.createFrom()
+.items(1,2,3,4) //upstream
+.subscribe() //downstream
+.with(item -> System.out.println(item));
+
+```
