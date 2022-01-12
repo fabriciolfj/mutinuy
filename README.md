@@ -36,5 +36,5 @@ Multi.createFrom()
 - Existem algumas estratégias para lidar com falhas, seja:
   - propagar
   - transformar em outra falha
-  - recuperar, mudando para outro fluxo
+  - recuperar, mudando para outro fluxo (mas não recebe mais itens, apos o recover)
   - tentar novamente
