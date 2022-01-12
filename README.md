@@ -27,3 +27,6 @@ Multi.createFrom()
 .with(item -> System.out.println(item));
 
 ```
+
+## Transformação de items
+- Ao transformar items em Multi<T>, podemos efetuar um merge (não garante a ordem) ou um concatenate (mantem a ordem dos eventos)
