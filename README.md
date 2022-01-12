@@ -27,3 +27,14 @@ Multi.createFrom()
 .with(item -> System.out.println(item));
 
 ```
+
+## Transformação de items
+- Ao transformar items em Multi<T>, podemos efetuar um merge (não garante a ordem) ou um concatenate (mantem a ordem dos eventos)
+
+## Falhas
+- Falhas são eventos terminais, ou seja, quando ocorre nenhum evento será recebido mais.
+- Existem algumas estratégias para lidar com falhas, seja:
+  - propagar
+  - transformar em outra falha
+  - recuperar, mudando para outro fluxo
+  - tentar novamente
