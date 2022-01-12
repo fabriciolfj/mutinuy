@@ -30,3 +30,6 @@ Multi.createFrom()
 
 ## Transformação de items
 - Ao transformar items em Multi<T>, podemos efetuar um merge (não garante a ordem) ou um concatenate (mantem a ordem dos eventos)
+
+## Falhas
+- Falhas são eventos terminais, ou seja, quando ocorre nenhum evento será recebido mais.
