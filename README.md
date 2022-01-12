@@ -33,3 +33,8 @@ Multi.createFrom()
 
 ## Falhas
 - Falhas são eventos terminais, ou seja, quando ocorre nenhum evento será recebido mais.
+- Existem algumas estratégias para lidar com falhas, seja:
+  - propagar
+  - transformar em outra falha
+  - recuperar, mudando para outro fluxo
+  - tentar novamente
