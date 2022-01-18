@@ -16,7 +16,7 @@ public class Retrying {
                 .retry()
                 //.withBackOff(Duration.ofMillis(100), Duration.ofSeconds(1)) //atraso exponencial (inicial, maximo)
                 //.atMost(3)
-                .until(f -> isValid())
+                .until(f -> isValid())//vai continuar tentando, ate que a condicao seja verdadeira
                 .subscribe()
                 .with(i -> System.out.println(i));
     }
