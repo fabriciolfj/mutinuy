@@ -42,3 +42,4 @@ Multi.createFrom()
 ## emitOn e runSubscriptionOn
 - emiton: pega os dados vindos do upstream e reproduz para o downstream em uma thread fornecida pelo executor.
 - runSubscriptionOn: esta vinculado ao processo de assinatura, ele solicita que o upstream execute sua assinatura em uma thread fornecida pelo executor.
+- obs: são indicados para uso, com integração a apis ou pontos de bloqueio (programação imperativa)  
