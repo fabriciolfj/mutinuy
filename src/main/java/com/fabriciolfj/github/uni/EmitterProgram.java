@@ -9,6 +9,6 @@ public class EmitterProgram {
                 .emitter(em -> {
                     System.out.println("Processando");
                     em.complete("Completo");
-                }).subscribe().with(value -> System.out.println("Consuindo " + value));
+                }).subscribe().with(value -> System.out.println("Consumindo " + value));
     }
 }

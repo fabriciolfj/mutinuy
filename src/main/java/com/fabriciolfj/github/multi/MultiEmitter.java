@@ -11,6 +11,7 @@ public class MultiEmitter {
             em.emit(2);
             em.emit(3);
             em.complete();
+                    em.emit(4);
         }).subscribe()
                 .with(value -> System.out.println(value));
     }
